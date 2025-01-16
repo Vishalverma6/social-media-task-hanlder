@@ -99,3 +99,44 @@ exports.getAllUserData =async(req, res) => {
         });
     }
 }
+
+// delete the single user Data
+exports.deleteUserData = async(req, res) => {
+    try{
+
+        // fetch the Id of user ID from req body
+        const {dataId} = req.body;
+        console.log("dataId",dataId)
+
+        // validation
+        if(!dataId){
+            return res.status(403).json({
+                success:false,
+                message:"Data Id is required",
+            });
+        }
+
+        const user = await User.findById(dataId);
+        if(!user){
+            return res.status(500).json({
+                success:false,
+                message:"User Not Found "
+            })
+        }
+        
+        await User.findByIdAndDelete(dataId);
+
+        // return res
+        return res.status(200).json({
+            success:true,
+            message:"User Data Deleted Successfully",
+        })
+    }
+    catch(error){
+        console.log(error);
+        return res.status(500).json({
+            success:false,
+            message:"Unable to Delete user Data, Please Try Again Later",
+        });
+    }
+}

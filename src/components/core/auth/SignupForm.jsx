@@ -98,9 +98,9 @@ const SignupForm = () => {
             </label>
          
 
-         {/* Password and confirm password  */}
-         <div className='flex flex-col md:flex-row gap-x-4 mt-[20px]'>
-                <label className='relative'>
+            {/* Password and confirm password  */}
+            <div className='flex flex-col w-full md:flex-row gap-x-4 mt-[20px]'>
+                <label className='relative md:w-[48%]'>
                     <p className='text-[0.875] text-richblack-5 mb-1 leading-[1.375]'>
                         Create Password<sup className='text-pink-200'>*</sup>
                     </p>
@@ -118,7 +118,7 @@ const SignupForm = () => {
                         (<AiOutlineEye fontSize={24} fill="#AFB2BF"/>)}
                     </span>
                 </label>
-                <label className='relative'>
+                <label className='relative md:w-[48%]'>
                     <p className='text-[0.875] text-richblack-5 mb-1 leading-[1.375]'>
                         Confirm password<sup className='text-pink-200'>*</sup>
                     </p>
@@ -140,7 +140,7 @@ const SignupForm = () => {
                     </span>
                 </label>
 
-                </div>
+              </div>
                 <button type='submit'
                 className='bg-yellow-50 mt-6 rounded-[8px] py-[8px]
                 px-[12px] font-medium text-richblack-900 w-full'>

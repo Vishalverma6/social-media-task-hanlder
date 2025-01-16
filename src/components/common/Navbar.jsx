@@ -71,15 +71,27 @@ const Navbar = () => {
                         )
                     }
                     {
-                    token &&(
+                      token &&(
                         <button 
                         onClick={logoutHandler}
                         className='border border-richblack-700 bg-richblack-800 px-[10px] py-[6px]
                         text-richblack-100 rounded-md'>
                             Logout
                         </button>
-                    )
-                }
+                       )
+                     }
+                     {
+                        token &&(
+                            <Link to={"/dashboard"} 
+                             className={`border border-richblack-700 bg-richblack-800   px-[10px] py-[6px]
+                             rounded-md ${matchRoute("/dashboard") ? "text-yellow-100" : "text-richblack-100"}`}
+                            >
+                               <p>
+                                 Dashboard
+                               </p>
+                            </Link>
+                        )
+                     }
         </div>
       </div>
 

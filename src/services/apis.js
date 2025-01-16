@@ -9,6 +9,7 @@ export const endpoints = {
 
 // other Endpoints
 export const otherEndpoints = {
-    SEND_USER_DATA:BASE_URL +"/userData/submitData",
-    GET_ALL_USER_DATA:BASE_URL + "/userData/getAllUserData",
+    SEND_USER_DATA_API:BASE_URL +"/userData/submitData",
+    GET_ALL_USER_DATA_API:BASE_URL + "/userData/getAllUserData",
+    DELETE_USER_DATA_API :BASE_URL + "/userData/deleteUserData",
 }

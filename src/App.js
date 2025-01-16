@@ -8,10 +8,11 @@ import SignupForm from './components/core/auth/SignupForm';
 import LoginForm from './components/core/auth/LoginForm';
 import SendData from './Pages/SendData';
 import Dashboard from './Pages/Dashboard';
+import { useSelector } from 'react-redux';
 
 
 function App() {
-  // const {user} = useSelector( (state) => state.profile)
+  const {user} = useSelector( (state) => state.profile)
   return (
     <div className="w-screen min-h-screen bg-richblack-900 flex flex-col font-inter">
       <Navbar/>
@@ -23,7 +24,11 @@ function App() {
       <Route path='/login' element={<LoginForm/>}/>
       <Route path='/sendData' element={<SendData/>}/>
 
-      <Route path='/dashboard' element={<Dashboard/>}/>
+      {
+        user && (
+          <Route path='/dashboard' element={<Dashboard/>}/>
+        )
+      }
 
       <Route path='*' element={<Error/>}/>
      </Routes>
